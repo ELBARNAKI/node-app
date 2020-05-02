@@ -32,8 +32,8 @@ jobs:
         run: docker build -t node-App .
       - name: Tags
         run: |
-          docker tag back ${{ secrets.Docker_User }}/node-App:${{ github.sha }}
-          docker tag back ${{ secrets.Docker_User }}/node-App:latest
+          docker tag node-App ${{ secrets.Docker_User }}/node-App:${{ github.sha }}
+          docker tag node-App ${{ secrets.Docker_User }}/node-App:latest
       - name: Push
         run: |
           docker push ${{ secrets.Docker_User}}/back:${{ github.sha }}
